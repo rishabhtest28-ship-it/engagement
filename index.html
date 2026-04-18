@@ -125,32 +125,202 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 3rem;display:
 .tlsc{font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-top:0.4rem;display:block;}
 .tlbg{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.9rem;padding:0.3rem 0.9rem;border-radius:100px;border:1px solid var(--teal-b);font-size:0.7rem;letter-spacing:0.1em;color:var(--teal);background:var(--teal-bg);}
 
-/* GALLERY */
-.gallery-sec{background:var(--bg3);}
-.pg{margin-top:3rem;display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;}
-.pgl img {
-  max-width: 100%;   /* block ke width ke andar fit ho */
-  max-height: 1200px; /* height limit set karo */
-  object-fit: contain; /* image crop na ho, pura visible ho */
-  display: block;
-  margin: 0 auto;    /* center align */
+/* gallery */
+  /* ================= GALLERY SECTION ================= */
+.gallery-sec {
+  background: var(--bg3);
 }
 
-.pgi{position:relative;overflow:hidden;border-radius:6px;opacity:0;transform:scale(0.95) translateY(18px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1);border:1px solid var(--teal-b);}
-.pgi.vis{opacity:1;transform:scale(1) translateY(0);}
-.pgi:nth-child(1){grid-column:1/6;grid-row:1/3;aspect-ratio:2/3;transition-delay:0s}
-.pgi:nth-child(2){grid-column:6/9;grid-row:1/2;aspect-ratio:4/3;transition-delay:0.1s}
-.pgi:nth-child(3){grid-column:9/13;grid-row:1/2;aspect-ratio:4/3;transition-delay:0.15s}
-.pgi:nth-child(4){grid-column:6/10;grid-row:2/3;aspect-ratio:4/3;transition-delay:0.2s}
-.pgi:nth-child(5){grid-column:10/13;grid-row:2/3;aspect-ratio:4/3;transition-delay:0.25s}
-.pgin{width:100%;height:100%;min-height:150px;background:linear-gradient(135deg,#E6FAF8,#F0FDF9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;transition:transform 0.6s;position:relative;}
-.pgi:hover .pgin{transform:scale(1.04);}
-.pgin::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 40%,rgba(13,148,136,0.07),transparent 60%);}
-.pge{font-size:2rem;opacity:0.45;}.pgl{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);z-index:1;}
-.pgn{position:absolute;bottom:0.8rem;right:0.8rem;font-family:'Instrument Serif',serif;font-size:2.2rem;font-style:italic;color:var(--teal);opacity:0.07;}
-.pgh{position:absolute;inset:0;background:rgba(240,253,250,0.93);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity 0.4s;backdrop-filter:blur(6px);}
-.pgi:hover .pgh{opacity:1;}
-.pgh span{font-family:'Lora',serif;font-style:italic;font-size:0.83rem;color:var(--text);text-align:center;line-height:1.6;}
+/* GRID */
+.pg {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+/* IMAGE FIX (IMPORTANT) */
+.pgl img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* image box ke andar perfectly fit */
+  display: block;
+  border-radius: 6px;
+}
+
+/* CARD */
+.pgi {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  opacity: 0;
+  transform: scale(0.95) translateY(18px);
+  transition: all 0.9s cubic-bezier(0.16,1,0.3,1);
+  border: 1px solid var(--teal-b);
+}
+
+.pgi.vis {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* GRID POSITIONS (DESKTOP) */
+.pgi:nth-child(1){
+  grid-column:1/6;
+  grid-row:1/3;
+  aspect-ratio:2/3;
+  transition-delay:0s;
+}
+
+.pgi:nth-child(2){
+  grid-column:6/9;
+  grid-row:1/2;
+  aspect-ratio:4/3;
+  transition-delay:0.1s;
+}
+
+.pgi:nth-child(3){
+  grid-column:9/13;
+  grid-row:1/2;
+  aspect-ratio:4/3;
+  transition-delay:0.15s;
+}
+
+.pgi:nth-child(4){
+  grid-column:6/10;
+  grid-row:2/3;
+  aspect-ratio:4/3;
+  transition-delay:0.2s;
+}
+
+.pgi:nth-child(5){
+  grid-column:10/13;
+  grid-row:2/3;
+  aspect-ratio:4/3;
+  transition-delay:0.25s;
+}
+
+/* INNER BOX */
+.pgin {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  background: linear-gradient(135deg,#E6FAF8,#F0FDF9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.6s;
+  position: relative;
+}
+
+.pgi:hover .pgin {
+  transform: scale(1.04);
+}
+
+/* LIGHT EFFECT */
+.pgin::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 40% 40%,rgba(13,148,136,0.07),transparent 60%);
+}
+
+/* LABEL */
+.pgl {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--teal);
+  z-index: 1;
+}
+
+/* NUMBER */
+.pgn {
+  position: absolute;
+  bottom: 0.8rem;
+  right: 0.8rem;
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  color: var(--teal);
+  opacity: 0.07;
+}
+
+/* HOVER TEXT */
+.pgh {
+  position: absolute;
+  inset: 0;
+  background: rgba(240,253,250,0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+  backdrop-filter: blur(6px);
+}
+
+.pgi:hover .pgh {
+  opacity: 1;
+}
+
+.pgh span {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.83rem;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 768px) {
+
+  .pg {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+
+  .pgi {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    aspect-ratio: 1/1;
+  }
+
+  .pgn {
+    font-size: 1.5rem;
+  }
+
+  .pgh span {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .pg {
+    grid-template-columns: 1fr;
+  }
+
+  .pgi {
+    aspect-ratio: 4/5;
+  }
+
+  .pgh {
+    padding: 0.8rem;
+  }
+
+  .pgh span {
+    font-size: 0.7rem;
+  }
+}
 
 /* REELS */
 .reels-sec{background:var(--bg);}
@@ -285,7 +455,7 @@ footer{padding:3.5rem 2rem 2.5rem;text-align:center;background:var(--bg2);border
 <div id="cur"></div><div id="cur2"></div><div id="prog"></div>
 
 <nav>
-  <div class="nav-logo">R ❤️ S 💍</div>
+  <div class="nav-logo">Rishabh 💞 Swati </div>
   <ul class="nav-links">
     <li><a href="#story">Story</a></li>
     <li><a href="#gallery">Photos</a></li>
@@ -303,7 +473,8 @@ footer{padding:3.5rem 2rem 2.5rem;text-align:center;background:var(--bg2);border
     <h1 class="hero-h1">
       <img src="pose2.jpeg" alt="">
     </h1>
-    <p class="hero-sub">NIT Trichy ke anjaan corridors se<br>Indore ki woh khaas shaam tak —<br>yeh kahaani hai humari.</p>
+    <p class="hero-sub">Rishabh ❤️ Swati
+    </br>A love story that turned into forever.</p>
     <div class="hero-pill"><span class="pd"></span>Engaged · 15 April 2026 · Indore</div>
   </div>
   <!-- <div class="hero-sc"><div class="sc-bar"></div><span>scroll</span></div> -->
@@ -327,10 +498,6 @@ footer{padding:3.5rem 2rem 2.5rem;text-align:center;background:var(--bg2);border
         <div class="tlt">🌱 Dosti Ka Woh Daur</div>
         <div class="tlh">Yaar Bane, Dil Badla</div>
         <p class="tlb">College ki late night conversations, canteen ki chai, exams ki tension mein ek dusre ka saath — <strong>yeh woh waqt tha jab dono ek dusre ke liye khaas bante ja rahe the.</strong> Koi ek pal nahi tha jab sab badal gaya — yeh ek gehri, dheemi, honest dosti thi jo apne aap kuch aur banne ki taraf badh rahi thi.</p>
-        <div class="tls">
-          "पल पल दिल के पास तुम रहती हो,<br>जीवन मीठी प्यास ये कहती हो..."
-          <span class="tlsc">♪ Pal Pal Dil Ke Paas — Rishabh ne Swati ke liye gaaya</span>
-        </div>
       </div>
       <div class="tli">
         <div class="tld"></div>
@@ -339,20 +506,21 @@ footer{padding:3.5rem 2rem 2.5rem;text-align:center;background:var(--bg2);border
         <p class="tlb">College ke baad dono ki zindagi ne <strong>Pune ka raasta pakda.</strong> Ek nayi city, nayi zindagi — aur in sab ke beech dil mein jo tha woh chhupna band ho gaya. Dosti ki us gehraai se <strong>mohabbat ka pehla sachcha ehsaas jaaga</strong> — aur dono ne jaana ki yeh dosti se kahin zyada kuch hai.</p>
         <div class="tls">
           "Tu Hai Toh Dil Dhadakta Hai,<br>Tu Hai Toh Saans Aati Hai,<br>Tu Naa Toh Ghar, Ghar Nahi Lagtaa..."
-          <span class="tlsc">♪ Tu Hai Toh — Mahi Ve</span>
         </div>
         <div class="tlbg">🌆 Pune, Maharashtra</div>
       </div>
       <div class="tli">
         <div class="tld"></div>
-        <div class="tlt">💌 28 November 2024 · The Big Decision</div>
+        <div class="tlt">💌 28 November 2024 </div>
         <div class="tlh">Ghar Tak Pahunchi Baat</div>
-        <p class="tlb">Yeh woh din tha jab dil ki baat <strong>ghar tak pahunchi.</strong> 28 November 2024 — dono ne apne apne ghar mein ek saath ek faisla sunaya. Families ko pata chala ki yeh sirf dosti nahi thi — <strong>yeh woh commitment thi jo lifetime ke liye thi.</strong> Dono families ne khushiyon ke saath is rishtey ko apna liya. 🙏</p>
+        <p class="tlb">Yeh woh din tha jab humne apni baat <strong>ghar par batayi.</strong><br>28 November 2024 — tab sabko samajh aaya ki yeh sirf dosti nahi…<br>
+<strong>yeh lifetime saath ka vaada hai.</strong><br>
+Aur phir, dono families ne is rishtey ko pyaar se apna liya. 🙏🏻</p>
         <div class="tlbg">📅 28 November 2024 · Official Ho Gaye</div>
       </div>
       <div class="tli">
         <div class="tld"></div>
-        <div class="tlt">💍 15 April 2026 · Indore · Forever</div>
+        <div class="tlt">💍 15 April 2026 · Forever</div>
         <div class="tlh">Engagement · Woh Khaas Din</div>
         <p class="tlb">Aur phir aaya woh din jiske liye dono intezaar kar rahe the. <strong>Indore ki woh sunehri shaam</strong> — teal rangon se sajke, apnon ke beech mein — <strong>Rishabh aur Swati officially engaged ho gaye.</strong> Ab yeh sirf ek love story nahi — yeh ek nayi duniya ki shuruwat hai. 🩵</p>
         <div class="tlbg">💍 Indore · 15 April 2026</div>
@@ -464,7 +632,6 @@ document.querySelectorAll('.video-wrapper').forEach(wrapper => {
         <div class="vd" id="vd"></div>
         <div class="vi">
           <div class="vtt">Pal Pal Dil Ke Paas</div>
-          <div class="vat">Rishabh ne Swati ke liye gaaya ♪</div>
           <div class="vprog"><div class="vpb" id="vpb"></div></div>
           <div class="vtimes"><span class="vtl" id="ct">0:00</span><span class="vtl" id="tt">--:--</span></div>
         </div>
@@ -472,34 +639,42 @@ document.querySelectorAll('.video-wrapper').forEach(wrapper => {
       </div>
       <audio id="au" preload="none" src="song.mp3"></audio>
 
-      <div class="snote">🩵 Player pe click karo — Pal Pal Dil Ke Paas chalega! Rishabh ka Swati ke liye gaaya woh favourite gaana 🎶</div>
+      <div class="snote">🩵 Player pe click karo — Rishabh ka Swati ke liye gaaya woh favourite gaana 🎶</div>
 
       <!-- LYRICS 1 -->
       <div class="lb">
         <div class="lt">Pal Pal Dil Ke Paas</div>
-        <span class="la">Classic Hindi · Rishabh ka favourite ♪</span>
         <div class="lx">
-          <div class="st">
-            पल पल दिल के पास तुम रहती हो<br>
-            पल पल दिल के पास तुम रहती हो<br>
-            जीवन मीठी प्यास ये कहती हो<br>
-            पल पल दिल के पास तुम रहती हो
-          </div>
-          <div class="ld">✦ ✦ ✦</div>
-          <div class="st">
-            तुम सोचोगी क्यूँ इतना मैं तुमसे प्यार करूं<br>
-            तुम समझोगी दीवाना मैं भी इक़रार करूं<br>
-            दीवानों की ये बातें दीवाने जानते हैं<br>
-            जलने में क्या मज़ा है परवाने जानते हैं<br>
-            तुम यूँ ही जलाते रहना आ आ कर ख़्वाबों में
-          </div>
-          <div class="ld">✦ ✦ ✦</div>
-          <div class="st">
-            पल पल दिल के पास तुम रहती हो<br>
-            जीवन मीठी प्यास ये कहती हो<br>
-            पल पल दिल के पास तुम रहती हो
-          </div>
-        </div>
+<div class="st">
+Pal pal dil ke paas tum rehti ho
+
+Pal pal dil ke paas tum rehti ho
+
+Jeevan meethi pyaas yeh kehti ho
+
+Pal pal dil ke paas tum rehti ho
+</div>
+<div class="ld">✦ ✦ ✦</div>
+<div class="st">
+Tum sochogi kyun itna main tumse pyar karoon
+
+Tum samajhogi deewana main bhi iqraar karoon
+
+Deewano ki yeh baatein deewane jaante hain
+
+Jalne mein kya maza hai parwane jaante hain
+
+Tum yoon hi jalaate rehna aa aa kar khwabon mein
+</div>
+<div class="ld">✦ ✦ ✦</div>
+<div class="st">
+Pal pal dil ke paas tum rehti ho
+
+Jeevan meethi pyaas yeh kehti ho
+
+Pal pal dil ke paas tum rehti ho
+</div>
+</div>
       </div>
 
       <div class="ssep"></div>
