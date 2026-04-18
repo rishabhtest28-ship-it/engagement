@@ -611,26 +611,40 @@ footer{padding:3.5rem 2rem 2.5rem;text-align:center;background:var(--bg2);border
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-grid"></div><div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
   <div class="hero-content">
+
     <h1 class="hero-h1">
       <img src="pose2.jpeg" alt="">
     </h1>
-    <p class="hero-sub">Rishabh ❤️ Swati
-    </br>A love story that turned into forever.</p>
-    <div class="hero-pill"><span class="pd"></span>Engaged · 15 April 2026 · Indore</<div class="hero-music-wrap">
-  <button class="hero-music-btn" onclick="playMusic()">
-    <span class="line1">🎶 Tap to play our song</span>
-    <span class="line2">Scroll down ↓</span>
-  </button>
-</div>
+
+    <p class="hero-sub">
+      Rishabh ❤️ Swati<br>
+      A love story that turned into forever.
+    </p>
+
+    <div class="hero-pill">
+      <span class="pd"></span>
+      Engaged · 15 April 2026 · Indore
+    </div>
+
+    <!-- 🎶 MUSIC BUTTON -->
+    <div class="hero-music-wrap">
+      <button class="hero-music-btn" onclick="playMusic()">
+        <span class="line1">🎶 Tap to play our song</span>
+        <span class="line2">Scroll down ↓</span>
+      </button>
+    </div>
+
   </div>
 
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop>
+    <source src="song1.mp3" type="audio/mpeg">
+  </audio>
 
-<audio id="bgMusic" loop>
-  <source src="song1.mp3" type="audio/mpeg">
-</audio>
-  <!-- <div class="hero-sc"><div class="sc-bar"></div><span>scroll</span></div> -->
 </section>
 <script>
   let currentAudio = null;
