@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishabh ❤️ Swati 💍</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --teal:#0D9488;--teal-l:#2DD4BF;--teal-pale:#99F6E4;
+  --teal-bg:rgba(13,148,136,0.06);--teal-b:rgba(13,148,136,0.18);
+  --bg:#FFFFFF;--bg2:#F8FFFE;--bg3:#F0FDFA;
+  --text:#0F2824;--muted:#5A7A75;--faint:#B2D8D4;
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
+#cur{position:fixed;width:32px;height:32px;border:1.5px solid var(--teal);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.08s;}
+#cur2{position:fixed;width:5px;height:5px;background:var(--teal);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+#prog{position:fixed;top:0;left:0;height:2.5px;background:linear-gradient(90deg,var(--teal),var(--teal-l));z-index:999;width:0%;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(255,255,255,0.88);border-bottom:1px solid var(--teal-b);}
+.nav-logo{font-family:'Instrument Serif',serif;font-size:1.2rem;font-style:italic;color:var(--teal);}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;font-weight:500;}
+.nav-links a:hover{color:var(--teal);}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  /* sirf image background */
+  background: url('./back3.jpg') no-repeat center center;
+  background-size: cover;        
+  background-attachment: fixed;  
+  border-radius: 10px;           /* image corners rounded */
+  color: #fff !important;        /* text white */
+  font-weight: bold;             /* text bold */
+}
+
+.hero-h1 img {
+  max-width: 90%;   /* window ke width ke hisaab se adjust hoga */
+  height: auto;      /* aspect ratio maintain rahega */
+  display: block;    /* line break ke saath clean layout */
+  margin: 0 auto; 
+  border-radius: 20px; 
+  margin-top: 50px;  /* rounded corners for image */
+}
+.hero-sub {
+    margin-top: 1.8rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #fff !important;
+    font-style: italic;
+    font-family: 'Lora', serif;
+    opacity: 0;
+    animation: rU 1s ease 1.1s forwards;
+    line-height: 1.7;
+}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(13,148,136,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,148,136,0.05) 1px,transparent 1px);background-size:50px 50px;animation:gS 25s linear infinite;}
+@keyframes gS{from{background-position:0 0}to{background-position:50px 50px}}
+.hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(45,212,191,0.08),transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:gP 7s ease-in-out infinite alternate;pointer-events:none;}
+@keyframes gP{from{opacity:0.5;transform:translate(-50%,-50%) scale(1)}to{opacity:1;transform:translate(-50%,-50%) scale(1.2)}}
+.hero-content{position:relative;z-index:5;text-align:center;padding:2rem;max-width:900px;}
+.hero-ey{font-size:0.7rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2rem;opacity:0;animation:rU 1s ease 0.3s forwards;}
+.ey-l{width:40px;height:1px;background:var(--teal);}
+.hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(3.5rem,11vw,9rem);font-weight:400;line-height:0.92;color:var(--text);opacity:0;animation:rU 1.2s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;}
+.ht{color:var(--teal);font-style:italic;}
+.hh{display:block;font-size:clamp(2rem,5vw,4rem);margin:0.3rem 0;color:#E11D48;animation:hP 2s ease-in-out infinite;}
+@keyframes hP{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.hero-sub{margin-top:1.8rem;font-size:clamp(0.9rem,2vw,1.1rem);color:var(--muted);font-style:italic;font-family:'Lora',serif;opacity:0;animation:rU 1s ease 1.1s forwards;line-height:1.7;}.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  padding: 0.65rem 1.6rem;
+  border: 1px solid #ccc;        /* halka border */
+  border-radius: 100px;
+  background: #fff;              /* background white */
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: red;                    /* font color red */
+  opacity: 0;
+  animation: rU 1s ease 1.4s forwards;
+}
+
+.pd{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:bl 2s ease-in-out infinite;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero-sc{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--faint);font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;opacity:0;animation:rU 1s ease 2s forwards;}
+.sc-bar{width:1px;height:45px;background:linear-gradient(to bottom,var(--teal),transparent);animation:sP 2s ease-in-out infinite;}
+@keyframes sP{0%,100%{opacity:1}50%{opacity:0.2}}
+@keyframes rU{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* COMMON */
+.sec{padding:5.5rem 0;position:relative;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.csm{max-width:780px;margin:0 auto;padding:0 2rem;}
+.slb{font-size:0.68rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem;opacity:0;transform:translateY(20px);transition:all 0.8s;}
+.slb.vis{opacity:1;transform:translateY(0);}
+.slb::after{content:'';width:50px;height:1px;background:var(--teal);opacity:0.5;}
+.sh2{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:400;line-height:1.15;color:var(--text);opacity:0;transform:translateY(30px);transition:all 1s ease 0.1s;}
+.sh2.vis{opacity:1;transform:translateY(0);}
+.sh2 em{color:var(--teal);font-style:italic;}
+
+/* TIMELINE */
+.story-sec{background:var(--bg2);}
+.tl{margin-top:3.5rem;padding-left:2rem;position:relative;}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--teal),rgba(13,148,136,0.05));}
+.tli{position:relative;padding:0 0 3.5rem 3rem;opacity:0;transform:translateX(-30px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1);}
+.tli.vis{opacity:1;transform:translateX(0);}
+.tli:nth-child(2){transition-delay:0.1s}.tli:nth-child(3){transition-delay:0.2s}.tli:nth-child(4){transition-delay:0.3s}.tli:nth-child(5){transition-delay:0.4s}
+.tld{position:absolute;left:-2.6rem;top:0.2rem;width:16px;height:16px;border:2px solid var(--teal);border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;}
+.tld::after{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;}
+.tlt{font-size:0.67rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;font-weight:500;}
+.tlh{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--text);margin-bottom:0.8rem;line-height:1.2;}
+.tlb{font-size:0.97rem;color:var(--muted);line-height:1.9;max-width:570px;font-weight:300;}
+.tlb strong{color:var(--teal);font-weight:500;}
+.tls{margin-top:1.2rem;padding:1.2rem 1.5rem;border-left:2px solid var(--teal);background:var(--teal-bg);border-radius:0 10px 10px 0;font-family:'Lora',serif;font-style:italic;font-size:0.93rem;color:var(--text);line-height:1.9;}
+.tlsc{font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-top:0.4rem;display:block;}
+.tlbg{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.9rem;padding:0.3rem 0.9rem;border-radius:100px;border:1px solid var(--teal-b);font-size:0.7rem;letter-spacing:0.1em;color:var(--teal);background:var(--teal-bg);}
+
+/* GALLERY */
+.gallery-sec{background:var(--bg3);}
+.pg{margin-top:3rem;display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;}
+.pgl img {
+  max-width: 100%;   /* block ke width ke andar fit ho */
+  max-height: 1200px; /* height limit set karo */
+  object-fit: contain; /* image crop na ho, pura visible ho */
+  display: block;
+  margin: 0 auto;    /* center align */
+}
+
+.pgi{position:relative;overflow:hidden;border-radius:6px;opacity:0;transform:scale(0.95) translateY(18px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1);border:1px solid var(--teal-b);}
+.pgi.vis{opacity:1;transform:scale(1) translateY(0);}
+.pgi:nth-child(1){grid-column:1/6;grid-row:1/3;aspect-ratio:2/3;transition-delay:0s}
+.pgi:nth-child(2){grid-column:6/9;grid-row:1/2;aspect-ratio:4/3;transition-delay:0.1s}
+.pgi:nth-child(3){grid-column:9/13;grid-row:1/2;aspect-ratio:4/3;transition-delay:0.15s}
+.pgi:nth-child(4){grid-column:6/10;grid-row:2/3;aspect-ratio:4/3;transition-delay:0.2s}
+.pgi:nth-child(5){grid-column:10/13;grid-row:2/3;aspect-ratio:4/3;transition-delay:0.25s}
+.pgin{width:100%;height:100%;min-height:150px;background:linear-gradient(135deg,#E6FAF8,#F0FDF9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;transition:transform 0.6s;position:relative;}
+.pgi:hover .pgin{transform:scale(1.04);}
+.pgin::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 40%,rgba(13,148,136,0.07),transparent 60%);}
+.pge{font-size:2rem;opacity:0.45;}.pgl{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);z-index:1;}
+.pgn{position:absolute;bottom:0.8rem;right:0.8rem;font-family:'Instrument Serif',serif;font-size:2.2rem;font-style:italic;color:var(--teal);opacity:0.07;}
+.pgh{position:absolute;inset:0;background:rgba(240,253,250,0.93);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity 0.4s;backdrop-filter:blur(6px);}
+.pgi:hover .pgh{opacity:1;}
+.pgh span{font-family:'Lora',serif;font-style:italic;font-size:0.83rem;color:var(--text);text-align:center;line-height:1.6;}
+
+/* REELS */
+.reels-sec{background:var(--bg);}
+.rw{margin:3rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:680px;}
+.rc{border-radius:16px;overflow:hidden;border:1px solid var(--teal-b);opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(0.16,1,0.3,1);}
+.rc.vis{opacity:1;transform:translateY(0);}.rc:nth-child(2){transition-delay:0.2s;margin-top:3rem;}
+.ri{aspect-ratio:9/16;position:relative;background:linear-gradient(170deg,#E6FAF8,#F0FDFB 60%,#E8FAF8);display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;transition:transform 0.5s;}
+.rc:hover .ri{transform:scale(1.02);}
+.ri::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(13,148,136,0.1),transparent 60%),radial-gradient(circle at 70% 80%,rgba(45,212,191,0.07),transparent 50%);}
+.rpb{width:58px;height:58px;border-radius:50%;border:1.5px solid var(--teal);background:rgba(13,148,136,0.1);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;transition:all 0.4s;}
+.rc:hover .rpb{background:rgba(13,148,136,0.2);box-shadow:0 0 28px rgba(13,148,136,0.2);transform:scale(1.1);}
+.rpb::before{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(13,148,136,0.2);animation:pR 2.5s ease-in-out infinite;}
+@keyframes pR{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:0;transform:scale(1.4)}}
+.pt{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid var(--teal);margin-left:3px;}
+.rb{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 1.2rem 1.2rem;background:linear-gradient(to top,rgba(240,253,250,1),transparent);z-index:3;}
+.rbt{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.1rem;color:var(--text);display:block;margin-bottom:0.2rem;}
+.rbs{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);}
+.rm{padding:1.2rem;background:var(--bg3);}
+.rmn{font-family:'Instrument Serif',serif;font-style:italic;font-size:2rem;color:var(--teal);opacity:0.22;line-height:1;display:block;}
+.rmd{font-size:0.86rem;color:var(--muted);line-height:1.7;margin-top:0.2rem;font-weight:300;}
+
+/* SONGS */
+.song-sec{background:var(--bg2);padding:5rem 0;}
+.sw{max-width:800px;margin:0 auto;padding:0 2rem;}
+.sc2{position:relative;padding:2.5rem;border:1px solid var(--teal-b);border-radius:20px;background:linear-gradient(135deg,rgba(13,148,136,0.04),rgba(45,212,191,0.02));opacity:0;transform:translateY(30px);transition:all 1s ease;}
+.sc2.vis{opacity:1;transform:translateY(0);}
+
+/* VINYL PLAYER */
+.vp{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.8rem;padding:1.3rem 1.5rem;border:1px solid var(--teal-b);border-radius:14px;background:var(--bg);cursor:pointer;transition:all 0.3s;user-select:none;flex-wrap:wrap;}
+.vp:hover{background:var(--teal-bg);border-color:var(--teal);}
+.vd{width:64px;height:64px;border-radius:50%;background:conic-gradient(from 0deg,var(--teal),var(--teal-l),#E0FAF5,var(--teal),var(--teal-l),#E0FAF5,var(--teal));border:3px solid var(--teal-b);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.vd::after{content:'';width:16px;height:16px;background:var(--bg);border-radius:50%;border:2px solid var(--teal-b);}
+.vd.spin{animation:spn 4s linear infinite;}
+@keyframes spn{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.vi{flex:1;min-width:180px;}
+.vtt{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.15rem;color:var(--text);}
+.vat{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:0.1rem;}
+.vprog{margin-top:0.6rem;height:3px;background:var(--faint);border-radius:10px;overflow:hidden;}
+.vpb{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-l));width:0%;transition:width 0.4s linear;border-radius:10px;}
+.vtimes{display:flex;justify-content:space-between;margin-top:0.3rem;}
+.vtl{font-size:0.65rem;color:var(--muted);}
+.vctl{display:flex;align-items:center;}
+.pic{width:38px;height:38px;border:1.5px solid var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.75rem;transition:all 0.3s;flex-shrink:0;}
+.vp:hover .pic{background:var(--teal);color:#fff;}
+
+.snote{font-size:0.77rem;color:var(--muted);font-style:italic;border:1px solid var(--teal-b);border-radius:8px;padding:0.65rem 1rem;display:inline-block;background:var(--teal-bg);margin-bottom:1.8rem;}
+.lb{margin-bottom:2rem;}
+.lt{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.5rem;color:var(--teal);margin-bottom:0.2rem;}
+.la{font-size:0.63rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:block;}
+.lx{font-family:'Lora',serif;font-style:italic;font-size:0.97rem;color:var(--text);line-height:2.1;padding:1.5rem 1.5rem 1rem;background:var(--bg3);border-radius:10px;border-left:2px solid var(--teal);}
+.lx .st{margin-bottom:1.1rem;}.lx .st:last-child{margin-bottom:0;}
+.ld{text-align:center;color:var(--teal);opacity:0.4;margin:0.4rem 0;font-size:0.75rem;letter-spacing:0.3em;}
+.ssep{height:1px;background:linear-gradient(90deg,transparent,var(--teal-b),transparent);margin:2.2rem 0;}
+
+/* FAMILY */
+.family-sec{background:var(--bg3);}
+.fg{margin:3rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:880px;}
+.fc{border-radius:16px;overflow:hidden;border:1px solid var(--teal-b);opacity:0;transform:translateY(30px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1);}
+.fc.vis{opacity:1;transform:translateY(0);}.fc:nth-child(2){transition-delay:0.15s;}
+.fp{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#E6FAF8,#F0FDF9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;overflow:hidden;cursor:pointer;transition:transform 0.5s;}
+.fc:hover .fp{transform:scale(1.03);}
+.fp::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(13,148,136,0.08),transparent 70%);}
+.fpe{font-size:2.5rem;opacity:0.42;z-index:1;}.fpl {
+  display: inline-block;
+  width: 100%;       /* block ki width ke hisaab se adjust hoga */
+  max-width: 300px;  /* optional: block ki max width set kar sakte ho */
+  background: #fff;  /* white background */
+}
+
+.fpl img {
+  width: 100%;       /* image block ki width ke hisaab se stretch hogi */
+  height: auto;      /* aspect ratio maintain hoga */
+  object-fit: contain; /* poori image visible rahegi */
+  background: #fff;  /* extra space white fill hoga */
+  display: block;    /* inline gap hata dega */
+}
+
+.fpn{position:absolute;bottom:0.7rem;right:0.8rem;font-family:'Instrument Serif',serif;font-size:2rem;font-style:italic;color:var(--teal);opacity:0.08;}
+.fi{padding:1.4rem 1.4rem 1.8rem;}
+.ftg{font-size:0.63rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.3rem;}
+.fth{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.35rem;color:var(--text);margin-bottom:0.7rem;}
+.ftx{font-size:0.91rem;color:var(--muted);line-height:1.8;font-weight:300;}
+.fu{max-width:660px;margin:2.5rem auto 0;padding:0 2rem;text-align:center;opacity:0;transform:translateY(20px);transition:all 1s ease 0.3s;}
+.fu.vis{opacity:1;transform:translateY(0);}
+.fub{padding:2.3rem;border:1px solid var(--teal-b);border-radius:16px;background:var(--bg);position:relative;overflow:hidden;}
+.fub::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(13,148,136,0.06),transparent 60%);pointer-events:none;}
+.fue{font-size:2.2rem;display:block;margin-bottom:0.9rem;}
+.fut{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.5rem;color:var(--text);margin-bottom:0.9rem;}
+.fut em{color:var(--teal);}
+.fux{font-family:'Lora',serif;font-style:italic;font-size:0.97rem;color:var(--muted);line-height:1.9;}
+
+/* ENGAGEMENT */
+.engage-sec{background:var(--bg);}
+.ew{max-width:600px;margin:3rem auto 0;padding:0 2rem;opacity:0;transform:scale(0.95);transition:all 1.2s cubic-bezier(0.16,1,0.3,1);}
+.ew.vis{opacity:1;transform:scale(1);}
+.eb{position:relative;padding:2.8rem 2.3rem;border:1px solid var(--teal-b);border-radius:20px;background:linear-gradient(135deg,rgba(13,148,136,0.05),rgba(45,212,191,0.02));overflow:hidden;text-align:center;}
+.eb::before{content:'';position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,0.07),transparent 70%);top:-80px;right:-80px;pointer-events:none;}
+.eemo{font-size:2.8rem;margin-bottom:0.9rem;display:block;}
+.eey{font-size:0.67rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--teal);margin-bottom:0.7rem;}
+.eth{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.4rem,4vw,2.3rem);color:var(--text);line-height:1.2;margin-bottom:1.8rem;}
+.eth em{color:var(--teal);}
+.edg{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin:1.8rem 0;position:relative;z-index:1;}
+.egi{padding:1.1rem;background:var(--bg3);border:1px solid var(--teal-b);border-radius:10px;transition:all 0.3s;}
+.egi:hover{background:var(--teal-bg);transform:translateY(-2px);}
+.eic{font-size:1.35rem;margin-bottom:0.35rem;display:block;}
+.elb{font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.2rem;}
+.ev{font-family:'Lora',serif;font-size:0.93rem;color:var(--text);}
+.emsg{font-family:'Lora',serif;font-style:italic;font-size:0.97rem;color:var(--muted);line-height:1.9;margin:1.4rem 0;position:relative;z-index:1;}
+
+/* FOOTER */
+footer{padding:3.5rem 2rem 2.5rem;text-align:center;background:var(--bg2);border-top:1px solid var(--teal-b);}
+.fn{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.8rem,5vw,2.8rem);color:var(--teal);margin-bottom:0.3rem;}
+.fh{color:#E11D48;display:inline-block;animation:hP 2s ease-in-out infinite;}
+.fd{font-size:0.73rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1.3rem;}
+.fs{width:1px;height:32px;background:linear-gradient(to bottom,var(--teal),transparent);margin:0 auto 1rem;}
+.fcr{font-size:0.68rem;color:var(--faint);letter-spacing:0.08em;}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}.nav-links{display:none;}
+  .pg{grid-template-columns:1fr 1fr;}
+  .pgi:nth-child(1){grid-column:1/3;grid-row:auto;aspect-ratio:16/9;}
+  .pgi:nth-child(4){grid-column:1/3;}
+  .rw{grid-template-columns:1fr;max-width:320px;}
+  .rc:nth-child(2){margin-top:0;}
+  .fg{grid-template-columns:1fr;}
+  .edg{grid-template-columns:1fr;}
+  .tl{padding-left:1rem;}.tli{padding-left:2.5rem;}.tld{left:-2rem;}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur2"></div><div id="prog"></div>
+
+<nav>
+  <div class="nav-logo">R ❤️ S 💍</div>
+  <ul class="nav-links">
+    <li><a href="#story">Story</a></li>
+    <li><a href="#gallery">Photos</a></li>
+    <li><a href="#reels">Reels</a></li>
+    <li><a href="#songs">Songs</a></li>
+    <li><a href="#family">Family</a></li>
+    <li><a href="#engagement">Engagement</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div><div class="hero-glow"></div>
+  <div class="hero-content">
+    <h1 class="hero-h1">
+      <img src="pose2.jpeg" alt="">
+    </h1>
+    <p class="hero-sub">NIT Trichy ke anjaan corridors se<br>Indore ki woh khaas shaam tak —<br>yeh kahaani hai humari.</p>
+    <div class="hero-pill"><span class="pd"></span>Engaged · 15 April 2026 · Indore</div>
+  </div>
+  <!-- <div class="hero-sc"><div class="sc-bar"></div><span>scroll</span></div> -->
+</section>
+
+<!-- STORY -->
+<section class="story-sec sec" id="story">
+  <div class="container">
+    <div class="slb">Our Journey</div>
+    <h2 class="sh2">Strangers to <em>Soulmates</em></h2>
+    <div class="tl">
+      <div class="tli">
+        <div class="tld"></div>
+        <div class="tlt">📍 NIT Trichy · Pehli Mulaqat</div>
+        <div class="tlh">Ek Anjaan Si Shuruwat</div>
+        <p class="tlb">Do log. Ek college. Hazaaron students ke beech mein — NIT Trichy ke un corridors mein koi script nahi thi, koi plan nahi tha. <strong>Sirf ek anjaan chehra jo dheere dheere jaana pehchana lagne laga.</strong> Pehle ek hello, phir baatein, phir routine — aur kab dosti bann gayi, pata hi nahi chala.</p>
+        <div class="tlbg">🎓 NIT Trichy, Tamil Nadu</div>
+      </div>
+      <div class="tli">
+        <div class="tld"></div>
+        <div class="tlt">🌱 Dosti Ka Woh Daur</div>
+        <div class="tlh">Yaar Bane, Dil Badla</div>
+        <p class="tlb">College ki late night conversations, canteen ki chai, exams ki tension mein ek dusre ka saath — <strong>yeh woh waqt tha jab dono ek dusre ke liye khaas bante ja rahe the.</strong> Koi ek pal nahi tha jab sab badal gaya — yeh ek gehri, dheemi, honest dosti thi jo apne aap kuch aur banne ki taraf badh rahi thi.</p>
+        <div class="tls">
+          "पल पल दिल के पास तुम रहती हो,<br>जीवन मीठी प्यास ये कहती हो..."
+          <span class="tlsc">♪ Pal Pal Dil Ke Paas — Rishabh ne Swati ke liye gaaya</span>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tld"></div>
+        <div class="tlt">🏙️ Pune · Jahan Pyaar Hua</div>
+        <div class="tlh">Pune Mein Mohabbat</div>
+        <p class="tlb">College ke baad dono ki zindagi ne <strong>Pune ka raasta pakda.</strong> Ek nayi city, nayi zindagi — aur in sab ke beech dil mein jo tha woh chhupna band ho gaya. Dosti ki us gehraai se <strong>mohabbat ka pehla sachcha ehsaas jaaga</strong> — aur dono ne jaana ki yeh dosti se kahin zyada kuch hai.</p>
+        <div class="tls">
+          "Tu Hai Toh Dil Dhadakta Hai,<br>Tu Hai Toh Saans Aati Hai,<br>Tu Naa Toh Ghar, Ghar Nahi Lagtaa..."
+          <span class="tlsc">♪ Tu Hai Toh — Mahi Ve</span>
+        </div>
+        <div class="tlbg">🌆 Pune, Maharashtra</div>
+      </div>
+      <div class="tli">
+        <div class="tld"></div>
+        <div class="tlt">💌 28 November 2024 · The Big Decision</div>
+        <div class="tlh">Ghar Tak Pahunchi Baat</div>
+        <p class="tlb">Yeh woh din tha jab dil ki baat <strong>ghar tak pahunchi.</strong> 28 November 2024 — dono ne apne apne ghar mein ek saath ek faisla sunaya. Families ko pata chala ki yeh sirf dosti nahi thi — <strong>yeh woh commitment thi jo lifetime ke liye thi.</strong> Dono families ne khushiyon ke saath is rishtey ko apna liya. 🙏</p>
+        <div class="tlbg">📅 28 November 2024 · Official Ho Gaye</div>
+      </div>
+      <div class="tli">
+        <div class="tld"></div>
+        <div class="tlt">💍 15 April 2026 · Indore · Forever</div>
+        <div class="tlh">Engagement · Woh Khaas Din</div>
+        <p class="tlb">Aur phir aaya woh din jiske liye dono intezaar kar rahe the. <strong>Indore ki woh sunehri shaam</strong> — teal rangon se sajke, apnon ke beech mein — <strong>Rishabh aur Swati officially engaged ho gaye.</strong> Ab yeh sirf ek love story nahi — yeh ek nayi duniya ki shuruwat hai. 🩵</p>
+        <div class="tlbg">💍 Indore · 15 April 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-sec sec" id="gallery">
+  <div class="container">
+    <div class="slb">Captured Moments</div>
+    <h2 class="sh2">Photos <em>Humare</em></h2>
+    <div class="pg">
+      <div class="pgi"><div class="pgin"><span class="pgl"><img src="ring.jpeg" alt=""></span><span class="pgn">01</span></div><div class="pgh"><span>"Woh pehli nazar jo sab badal gayi..."</span></div></div>
+      <div class="pgi"><div class="pgin"><span class="pgl"><img src="ring3.jpeg" alt=""><span class="pgn">02</span></div><div class="pgh"><span>"College ke woh sunahre din..."</span></div></div>
+      <div class="pgi"><div class="pgin"><span class="pgl"><img src="swati.jpeg" alt=""></span><span class="pgn">03</span></div><div class="pgh"><span>"Pune mein pyaar ka ehsaas..."</span></div></div>
+      <div class="pgi"><div class="pgin"><span class="pgl"><img src="pose1.jpeg" alt=""></span><span class="pgn">04</span></div><div class="pgh"><span>"15 April — ab forever shuru..."</span></div></div>
+      <div class="pgi"><div class="pgin"><span class="pgl"><img src="rishu.jpeg" alt=""></span><span class="pgn">05</span></div><div class="pgh"><span>"Teal mein sajai humari duniya..."</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="reels-sec sec" id="reels">
+  <div class="container">
+    <div class="slb">Reels</div>
+    <h2 class="sh2">Memories in <em>Motion</em></h2>
+    <div class="rw">
+
+      <div class="rc">
+        <div class="ri">
+          <div class="video-wrapper">
+            <video class="reel-video" preload="none" width="100%">
+              <source src="IMG_8879.MOV" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="custom-play">▶</button>
+          </div>
+          <div class="rb">
+            <span class="rbt">"Love Story"</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc">
+        <div class="ri">
+          <div class="video-wrapper">
+            <video class="reel-video" preload="none" width="100%">
+              <source src="IMG_1830.MOV" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="custom-play">▶</button>
+          </div>
+          <div class="rb">
+            <span class="rbt">"Engagement Reel"</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.video-wrapper {
+  position: relative;
+}
+.custom-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+  const video = wrapper.querySelector('video');
+  const button = wrapper.querySelector('.custom-play');
+
+  button.addEventListener('click', () => {
+    video.setAttribute('controls', 'true'); // controls ko enable karo
+    video.play();
+    button.style.display = 'none'; // play button hide karo
+  });
+});
+</script>
+
+
+
+<!-- SONGS -->
+<section class="song-sec" id="songs">
+  <div class="sw">
+    <div class="slb">Rishabh ne Swati ke liye gaaye</div>
+    <h2 class="sh2">Woh <em>Songs</em></h2>
+
+    <div class="sc2" style="margin-top:2rem;">
+
+      <!-- VINYL PLAYER -->
+      <div class="vp" id="vp" onclick="togglePlay()">
+        <div class="vd" id="vd"></div>
+        <div class="vi">
+          <div class="vtt">Pal Pal Dil Ke Paas</div>
+          <div class="vat">Rishabh ne Swati ke liye gaaya ♪</div>
+          <div class="vprog"><div class="vpb" id="vpb"></div></div>
+          <div class="vtimes"><span class="vtl" id="ct">0:00</span><span class="vtl" id="tt">--:--</span></div>
+        </div>
+        <div class="vctl"><div class="pic" id="pi">▶</div></div>
+      </div>
+      <audio id="au" preload="none" src="song.mp3"></audio>
+
+      <div class="snote">🩵 Player pe click karo — Pal Pal Dil Ke Paas chalega! Rishabh ka Swati ke liye gaaya woh favourite gaana 🎶</div>
+
+      <!-- LYRICS 1 -->
+      <div class="lb">
+        <div class="lt">Pal Pal Dil Ke Paas</div>
+        <span class="la">Classic Hindi · Rishabh ka favourite ♪</span>
+        <div class="lx">
+          <div class="st">
+            पल पल दिल के पास तुम रहती हो<br>
+            पल पल दिल के पास तुम रहती हो<br>
+            जीवन मीठी प्यास ये कहती हो<br>
+            पल पल दिल के पास तुम रहती हो
+          </div>
+          <div class="ld">✦ ✦ ✦</div>
+          <div class="st">
+            तुम सोचोगी क्यूँ इतना मैं तुमसे प्यार करूं<br>
+            तुम समझोगी दीवाना मैं भी इक़रार करूं<br>
+            दीवानों की ये बातें दीवाने जानते हैं<br>
+            जलने में क्या मज़ा है परवाने जानते हैं<br>
+            तुम यूँ ही जलाते रहना आ आ कर ख़्वाबों में
+          </div>
+          <div class="ld">✦ ✦ ✦</div>
+          <div class="st">
+            पल पल दिल के पास तुम रहती हो<br>
+            जीवन मीठी प्यास ये कहती हो<br>
+            पल पल दिल के पास तुम रहती हो
+          </div>
+        </div>
+      </div>
+
+      <div class="ssep"></div>
+
+      <!-- LYRICS 2 -->
+      <div class="lb">
+        <div class="lt">Tu Hai Toh</div>
+        <span class="la">Mahi Ve · Dono ki feeling ❤️</span>
+        <div class="lx">
+          <div class="st">
+            Koi Nai Mera<br>
+            Zaruurat Teri<br>
+            Laage Naa Jiya<br>
+            Dekho Naa Jo<br>
+            Soorat Teri
+          </div>
+          <div class="ld">✦</div>
+          <div class="st">
+            Tu Hai Toh Dil Dhadakta Hai<br>
+            Tu Hai Toh Saans Aati Hai<br>
+            Tu Naa Toh Ghar Ghar Nahi Lagtaa<br>
+            Tu Hai Toh Darr Nahi Lagtaa<br>
+            Tu Hai Toh Gham Naa Aate Hain<br>
+            Tu Hai Toh Muskuraate Hain<br>
+            Ke Tere Bin So Nahi Sakte<br>
+            Kisi Ke Ho Nahi Sakte<br>
+            Tu Hai Toh...
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section class="family-sec sec" id="family">
+  <div class="container">
+    <div class="slb">Do Pariwar, Ek Khushiyan</div>
+    <h2 class="sh2">Jab Do Ghar <em>Ek Ho Gaye</em></h2>
+    <div class="fg">
+      <div class="fc">
+        <div class="fp">
+          <span class="fpl"><img src="Rishabhfamily.jpeg" alt=""></span>
+          <span class="fpn">01</span>
+        </div>
+        <div class="fi">
+          <span class="ftg">💙 Rishabh Ki Family</span>
+          <div class="fth">Pyaar Se Bhara Ghar</div>
+          <p class="ftx">Jab Rishabh ne ghar mein Swati ke baare mein bataya, toh us ghar mein khushiyon ki lahar aa gayi. Unke parents ne <strong style="color:var(--teal)">dil se is rishte ko apnaya</strong> — woh jaante the ki unka beta kuch khaas dhoondh ke aaya hai. Woh sham unke liye bhi utni hi khaas thi. Maa ki aankhon mein khushi ke aansu aur papa ki muskaan — woh pal hamesha yaad rahega. 🙏</p>
+        </div>
+      </div>
+      <div class="fc">
+        <div class="fp" style="background:linear-gradient(135deg,#FFF0F5,#FFF5F8);">
+         
+          <span class="fpl"><img src="swatifamily.jpeg" alt=""></span>
+          <span class="fpn">02</span>
+        </div>
+        <div class="fi">
+          <span class="ftg">🩷 Swati Ki Family</span>
+          <div class="fth">Ghar Ki Muskaan</div>
+          <p class="ftx">Swati ke ghar mein bhi woh raat kuch alag thi. Parents ki aankhon mein <strong style="color:var(--teal)">aansu aur muskaan saath saath the</strong> — apni beti ke liye sabse achha partner milne ki khushi thi. Unhone Rishabh ko us din se apna maan liya — ek naya beta, ek nayi duniya. 🌸</p>
+        </div>
+      </div>
+    </div>
+    <div class="fu">
+      <div class="fub">
+        <span class="fue">🏠 ❤️ 🏠</span>
+        <div class="fut">15 April 2026 —<br><em>Do Ghar Ek Ho Gaye</em></div>
+        <p class="fux">
+          Woh shaam sirf ek couple ki baat nahi thi —<br>
+          woh woh din tha jab <strong>do pariwaaron ne ek dusre ko apnaya.</strong><br><br>
+          NIT Trichy ke corridors mein jo rishta anjaan mulaqat se shuru hua,<br>
+          Pune ki galiyon mein jo mohabbat pali,<br>
+          woh aaj ek nayi family ka hissa ban gayi.<br><br>
+          "Tere bina adhoori thi yeh kahaani —<br>
+          ab tum do ghar mein nahi, dono gharon mein ho." 🩵
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
+<section class="engage-sec sec" id="engagement">
+  <div class="csm">
+    <div class="slb" style="justify-content:center">The Big Day</div>
+    <h2 class="sh2" style="text-align:center">Our <em>Engagement</em></h2>
+    <div class="ew">
+      <div class="eb">
+        <span class="eemo">💍</span>
+        <div class="eey">With Love & Joy</div>
+        <h3 class="eth"><em>Rishabh ❤️ Swati</em><br>ki Engagement</h3>
+        <div class="edg">
+          <div class="egi"><span class="eic">📅</span><span class="elb">Date</span><span class="ev">15 April 2026</span></div>
+          <div class="egi"><span class="eic">📍</span><span class="elb">City</span><span class="ev">Indore, MP</span></div>
+          <div class="egi"><span class="eic">💌</span><span class="elb">Proposal</span><span class="ev">28 Nov 2024</span></div>
+          <div class="egi"><span class="eic">👗</span><span class="elb">Dress Colour</span><span class="ev" style="color:var(--teal)">Teal 🩵</span></div>
+          <div class="egi" style="grid-column:1/3"><span class="eic">🎓</span><span class="elb">Where It All Started</span><span class="ev">NIT Trichy → Pune → Indore → Forever</span></div>
+        </div>
+        <p class="emsg">"Stranger se dost, dost se pyaar, pyaar se hamesha —<br>yeh tha humara safar aur ab shuru hogi ek nayi kahaani."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fn">Rishabh <span class="fh">❤️</span> Swati</div>
+  <div class="fd">Engaged · 15.04.2026 · Indore</div>
+  <div class="fs"></div>
+  <div class="fcr">NIT Trichy → Pune → Indore → Forever 🩵</div>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur2.style.left=mx+'px';cur2.style.top=my+'px';});
+(function loop(){cx+=(mx-cx)*0.12;cy+=(my-cy)*0.12;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button,.ri,.pgi,.egi,.vp,.fp,.rc').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.style.transform='translate(-50%,-50%) scale(1.8)');
+  el.addEventListener('mouseleave',()=>cur.style.transform='translate(-50%,-50%) scale(1)');
+});
+
+// SCROLL PROGRESS
+window.addEventListener('scroll',()=>{
+  document.getElementById('prog').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
+});
+
+// OBSERVER
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.slb,.sh2,.tli,.pgi,.rc,.sc2,.ew,.fc,.fu').forEach(el=>io.observe(el));
+
+// PARALLAX
+window.addEventListener('scroll',()=>{
+  const hc=document.querySelector('.hero-content');
+  if(hc)hc.style.transform=`translateY(${window.scrollY*0.18}px)`;
+});
+
+// AUDIO PLAYER — simulated vinyl animation on click
+// Replace the src below with the actual Pal Pal Dil Ke Paas mp3 file path
+const au=document.getElementById('au');
+const vd=document.getElementById('vd');
+const pi=document.getElementById('pi');
+const vpb=document.getElementById('vpb');
+const ct=document.getElementById('ct');
+const tt=document.getElementById('tt');
+let playing=false;
+
+function fmt(s){
+  if(isNaN(s)) return "--:--";
+  const m=Math.floor(s/60);
+  const sec=Math.floor(s%60);
+  return m+":"+(sec<10?"0":"")+sec;
+}
+
+function togglePlay(){
+  if(playing){
+    au.pause();
+    vd.classList.remove('spin');
+    pi.textContent='▶';
+    playing=false;
+  } else {
+    au.play();
+    vd.classList.add('spin');
+    pi.textContent='⏸';
+    playing=true;
+  }
+}
+
+au.addEventListener('timeupdate',()=>{
+  if(au.duration){
+    vpb.style.width=(au.currentTime/au.duration*100)+'%';
+    ct.textContent=fmt(au.currentTime);
+    tt.textContent=fmt(au.duration);
+  }
+});
+
+au.addEventListener('ended',()=>{
+  vd.classList.remove('spin');
+  pi.textContent='▶';
+  playing=false;
+  vpb.style.width='0%';
+  ct.textContent='0:00';
+});
+</script>
+</body>
+</html>
